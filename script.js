@@ -50,7 +50,7 @@ document.querySelector("#three-btn").addEventListener("click", () => {
   outputElement.innerHTML = output;
 });
 document.querySelector("#divide-btn").addEventListener("click", () => {
-  output = output + "/";
+  output = output + "÷";
   outputElement.innerHTML = output;
 });
 document.querySelector("#zero-btn").addEventListener("click", () => {
@@ -73,7 +73,7 @@ document.querySelector("#c-btn").addEventListener("click", () => {
 
 function calculate(expression) {
   try {
-    let safeExpr = expression.replace(/x/g, "*");
+    let safeExpr = expression.replace(/x/g, "*").replace(/÷/g, "/");
     let result = eval(safeExpr);
     return result;
   } catch {
